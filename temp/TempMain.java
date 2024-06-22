@@ -252,8 +252,8 @@ public class TempMain {
 
 
         // 1 runtime or unchecked exceptions
-        int i = 10;
-        int j = 0;
+//        int i = 10;
+//        int j = 0;
 
 //        try {
 //            System.out.println(i / j);
@@ -380,35 +380,114 @@ public class TempMain {
 //        }
 
 
+//        List<Integer> intList = new ArrayList<>(); // list preserves insertion order
+//        intList.add(5);
+//        intList.add(8);
+//        intList.add(9);
+//        intList.add(5);
+//        System.out.println(intList);
+
+//        Set<Integer> intSet = new HashSet<>();  // Hashset doesn't preserves insertion order and doesn't allow duplicates
+//        intSet.add(5);
+//        intSet.add(8);
+//        intSet.add(3);
+//        intSet.add(2);
+//        intSet.add(8);
+//        intSet.add(9);
+//        intSet.add(5);
+//        System.out.println(intSet);
+
+        // Set<Integer> intSet = new LinkedHashSet<>();  // LinkedHashSet  preserves insertion order and doesn't allow duplicates
+
+//        Set<Integer> intSet1 = new HashSet<>();
+//
+//        for(int q=0; q<10000; q++){
+//            intSet1.add(q);
+//        }
+//
+//        System.out.println(intSet1);
+
+
+        // some changes   again changed
+
+
         List<Integer> intList = new ArrayList<>(); // list preserves insertion order
         intList.add(5);
         intList.add(8);
         intList.add(9);
-        intList.add(5);
-        System.out.println(intList);
+        intList.add(2);
+        intList.add(4);
+        //System.out.println(intList);
+        Comparator<Integer> c = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+//                if(o1<o2){
+//                    return 1;
+//                } else if (o1>o2) {
+//                    return -1;
+//                }else{
+//                    return 0;
+//                }
+                return -Integer.compare(o1, o2);
+            }
+        };
+        Collections.sort(intList, c);
+        //intList.sort(c);
+//        System.out.println(intList);
+//        System.out.println(intList.contains(8));
+        intList.remove(4);
+       // System.out.println(intList);
 
-        Set<Integer> intSet = new HashSet<>();  // Hashset doesn't preserves insertion order and doesn't allow duplicates
-        intSet.add(5);
-        intSet.add(8);
-        intSet.add(3);
-        intSet.add(2);
-        intSet.add(8);
-        intSet.add(9);
-        intSet.add(5);
-        System.out.println(intSet);
 
-        // Set<Integer> intSet = new LinkedHashSet<>();  // LinkedHashSet  preserves insertion order and doesn't allow duplicates
+//        Set<Integer> intSet = new LinkedHashSet<>();  // Hashset doesn't preserves insertion order and doesn't allow duplicates
+//        intSet.add(45);
+//        intSet.add(23);
+//        intSet.add(21);
+//        intSet.add(0);
+//        intSet.add(0);
+//        intSet.add(5);
+//        intSet.add(12);
+//        intSet.add(3);
+//        intSet.add(2);
+//        intSet.add(8);
+//        intSet.add(9);
+//        intSet.add(5);
+//        intSet.add(null);
+//        intSet.add(null);
+//        intSet.add(75);
+//        intSet.add(32);
+//        System.out.println(intSet);
 
-        Set<Integer> intSet1 = new HashSet<>();
+//        Set<Integer> intTreeSet = new TreeSet<>(c);  // Hashset doesn't preserves insertion order and doesn't allow duplicates
+//        intTreeSet.add(5);
+//        intTreeSet.add(8);
+//        intTreeSet.add(3);
+//        intTreeSet.add(2);
+//        intTreeSet.add(8);
+//        intTreeSet.add(9);
+//        intTreeSet.add(5);
+//        intTreeSet.add(1);
+//        intTreeSet.add(0);
+//        intTreeSet.add(12);
+//        System.out.println(intTreeSet);
 
-        for(int q=0; q<10000; q++){
-            intSet1.add(q);
+        Map<Integer, String> map = new LinkedHashMap<>();
+        map.put(5, "123ECE");
+        map.put(8, "12345ECE");
+        map.put(1, "Sushanth");
+        map.put(4, "1232992ECE");
+        map.put(2, "JNTU");
+        map.put(3, "ECE");
+        //Set<Integer> keys = map.keySet();
+        //System.out.println(keys);
+
+        //map.putIfAbsent(1, "Akshay");
+        for(Integer key : map.keySet()){
+            System.out.println(key+" "+map.get(key));
         }
 
-        System.out.println(intSet1);
 
 
-        // some changes   again changed
 
     }
 
